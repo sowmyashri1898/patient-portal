@@ -1,0 +1,11 @@
+# Use an official Java runtime as a parent image
+FROM openjdk:21-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the JAR file built from your project into the container
+COPY target/my-spring-boot-app.jar my-spring-boot-app.jar
+
+# Run the Spring Boot application
+CMD ["java", "-jar", "my-spring-boot-app.jar"]
